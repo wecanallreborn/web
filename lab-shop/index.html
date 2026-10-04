@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Изменение масштаба под ширину экрана для корректного отображения даже на телефоне-->
+  <title>Сувениры клуба изучения приматов</title>
+  <!-- Отсылка на игру Dont feed the monkeys. Весь сайт создан по ее мотивам.-->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <p class="brand-mark">birdmozgokluika</p>
+      <h1>Клетка наблюдателя</h1>
+      <p class="tagline">Коллекционеры-любители, всегда держат какие-то сувениры.</p>
+    </div>
+    <button class="cart-toggle" type="button" id="open-cart">
+      Корзина <span id="cart-count">0</span>
+    </button>
+  </header>
+
+  <aside class="cart-panel" id="cart-panel" aria-label="Корзина">
+    <div class="cart-head">
+      <h2>Корзина</h2>
+      <button type="button" id="close-cart" class="text-button">Закрыть</button>
+    </div>
+    <ul class="cart-list" id="cart-list"></ul>
+    <p class="cart-total">Итого: <strong id="cart-total">0</strong> бананов</p>
+    <button type="button" class="primary" id="open-order">Оформить заказ</button>
+  </aside>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Принадлежат к высшему уровню Клуба, клетка для Высших приматов.</p>
+      <h2>Мандрил собирающий важный</h2>
+      <p>
+        Для тех, кому недостаточно просто стать Высшим приматом.
+      </p>
+    </section>
+    <section class="catalog" aria-labelledby="catalog-title">
+      <div class="section-head">
+        <h2 id="catalog-title">Витрина трофеев</h2>
+      </div>
+      <div class="product-grid" id="product-grid">
+      </div>
+    </section>
+  </main>
+
+
+  <div class="modal" id="order-modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="order-title">
+      <h2 id="order-title">Оформление заказа</h2>
+      <p>Все поля обязательны. Это требование лабораторной.</p>
+      <form id="order-form">
+        <label>
+          Имя
+          <input type="text" name="firstName" required placeholder="Например, Аня">
+        </label>
+        <label>
+          Фамилия
+          <input type="text" name="lastName" required placeholder="Например, Иванова">
+        </label>
+        <label>
+          Адрес доставки
+          <input type="text" name="address" required placeholder="Город, улица, дом, квартира">
+        </label>
+        <label>
+          Контактный номер телефона
+          <input type="tel" name="phone" required placeholder="+7 900 000-00-00">
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="primary">Создать заказ</button>
+          <button type="button" id="close-order" class="text-button">Отмена</button>
+        </div>
+      </form>
+      <p class="order-message" id="order-message" hidden>Заказ создан!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>КЛУБ ИЗУЧЕНИЯ ПРИМАТОВ: тайная организация, члены которой сутками напролет подглядывают за совершенно незнакомыми людьми через объективы скрытых камер.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
