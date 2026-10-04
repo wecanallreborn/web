@@ -166,7 +166,6 @@ function addToCart(id) {
   }
   saveCart();
   renderCart();
-  cartPanel.classList.add("is-open");
 }
 
 function changeQty(id, delta) {
